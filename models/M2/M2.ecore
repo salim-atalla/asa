@@ -4,20 +4,18 @@
   <eClassifiers xsi:type="ecore:EClass" name="Component" instanceClassName="Component"
       abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="requiredinterface" lowerBound="1"
-        eType="#//RequiredInterface" containment="true"/>
+        eType="#//RequireInterface" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="providedinterface" lowerBound="1"
-        eType="#//ProvidedInterface" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="configuration" lowerBound="1"
-        upperBound="-1" eType="#//Configuration" containment="true"/>
+        eType="#//ProvideInterface" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ProvidedInterface" instanceClassName="ProvidedInterface"
+  <eClassifiers xsi:type="ecore:EClass" name="ProvideInterface" instanceTypeName="ProvideInterface"
       eSuperTypes="#//ComponentInterface">
     <eStructuralFeatures xsi:type="ecore:EReference" name="providedport" lowerBound="1"
         upperBound="-1" eType="#//ProvidedPort" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="providedservice" lowerBound="1"
         upperBound="-1" eType="#//ProvidedService" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RequiredInterface" instanceTypeName="RequiredInterface"
+  <eClassifiers xsi:type="ecore:EClass" name="RequireInterface" instanceTypeName="RequireInterface"
       eSuperTypes="#//ComponentInterface">
     <eStructuralFeatures xsi:type="ecore:EReference" name="requiredservice" lowerBound="1"
         upperBound="-1" eType="#//RequiredService" containment="true"/>
@@ -37,14 +35,17 @@
       eSuperTypes="#//Service"/>
   <eClassifiers xsi:type="ecore:EClass" name="ProvidedService" instanceTypeName="ProvidedService"
       eSuperTypes="#//Service"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Configuration" instanceTypeName="Configuration"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Configuration" instanceTypeName="Configuration">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conectors" upperBound="-1"
+        eType="#//Conector" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="components" upperBound="-1"
+        eType="#//Component" containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Conector" instanceTypeName="Conector">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="configuration" lowerBound="1"
-        upperBound="-1" eType="#//Configuration" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="providedRules" lowerBound="1"
-        upperBound="-1" eType="#//ProvidedRules" containment="true"/>
+        upperBound="-1" eType="#//ProvideRules" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="requiredRules" lowerBound="1"
-        upperBound="-1" eType="#//RequiredRules" containment="true"/>
+        upperBound="-1" eType="#//RequireRules" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="glue" lowerBound="1" upperBound="-1"
         eType="#//Glue" containment="true"/>
   </eClassifiers>
@@ -53,15 +54,15 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="rules" upperBound="-1"
         eType="#//Rule" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ProvidedRules" instanceTypeName="ProvidedRules"
+  <eClassifiers xsi:type="ecore:EClass" name="ProvideRules" instanceTypeName="ProvideRules"
       eSuperTypes="#//RulesInterface"/>
-  <eClassifiers xsi:type="ecore:EClass" name="RequiredRules" instanceTypeName="RequiredRules"
+  <eClassifiers xsi:type="ecore:EClass" name="RequireRules" instanceTypeName="RequireRules"
       eSuperTypes="#//RulesInterface"/>
   <eClassifiers xsi:type="ecore:EClass" name="Rule" instanceTypeName="Rule"/>
   <eClassifiers xsi:type="ecore:EClass" name="ProvidedPort2RequiredRuleAttachment"
       instanceTypeName="ProvidedPort2RequiredRuleAttachment" eSuperTypes="#//Attachment">
     <eStructuralFeatures xsi:type="ecore:EReference" name="requiredRule" lowerBound="1"
-        eType="#//RequiredRules" containment="true"/>
+        eType="#//RequireRules" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="providedport" lowerBound="1"
         eType="#//ProvidedPort" containment="true"/>
   </eClassifiers>
@@ -72,7 +73,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="requiredport" lowerBound="1"
         eType="#//RequiredPort" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="providedRule" lowerBound="1"
-        eType="#//ProvidedRules" containment="true"/>
+        eType="#//ProvideRules" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Glue" instanceTypeName="Glue"/>
 </ecore:EPackage>
