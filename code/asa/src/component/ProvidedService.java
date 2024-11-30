@@ -3,10 +3,10 @@ package component;
 import core.Service;
 
 /**
- * Represents a Provided Service, a specialization of Service.
+ * Represents a service provided by a component.
  */
 public class ProvidedService extends Service {
-    public ProvidedService(String serviceId) {
-        super(serviceId);
+    public ProvidedService(String serviceName) {
+        super(serviceName);
     }
 }

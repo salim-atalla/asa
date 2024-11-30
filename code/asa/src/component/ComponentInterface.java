@@ -6,11 +6,11 @@ import core.Service;
 import java.util.List;
 
 /**
- * Represents a generic Component Interface.
+ * Abstract class representing a generic interface for components.
  */
 public abstract class ComponentInterface {
-    private List<Port> ports; // List of associated ports.
-    private List<Service> services; // List of associated services.
+    private List<Port> ports;
+    private List<Service> services;
 
     public ComponentInterface(List<Port> ports, List<Service> services) {
         this.ports = ports;
@@ -21,15 +21,7 @@ public abstract class ComponentInterface {
         return ports;
     }
 
-    public void setPorts(List<Port> ports) {
-        this.ports = ports;
-    }
-
     public List<Service> getServices() {
         return services;
-    }
-
-    public void setServices(List<Service> services) {
-        this.services = services;
     }
 }

@@ -1,20 +1,20 @@
 package core;
 
 /**
- * Represents a Rule in the system.
+ * Represents a rule used by a connector or a glue.
  */
 public class Rule {
-    private String ruleId; // Unique identifier for the rule.
+    private String ruleName;
 
-    public Rule(String ruleId) {
-        this.ruleId = ruleId;
+    public Rule(String ruleName) {
+        this.ruleName = ruleName;
     }
 
-    public String getRuleId() {
-        return ruleId;
+    public String getRuleName() {
+        return ruleName;
     }
 
-    public void setRuleId(String ruleId) {
-        this.ruleId = ruleId;
+    public void setRuleName(String ruleName) {
+        this.ruleName = ruleName;
     }
 }

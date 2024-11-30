@@ -3,12 +3,10 @@ package component;
 import core.Service;
 
 /**
- * Represents a Required Service, a specialization of Service.
+ * Represents a service required by a component.
  */
 public class RequiredService extends Service {
-    public RequiredService(String serviceId) {
-        super(serviceId);
+    public RequiredService(String serviceName) {
+        super(serviceName);
     }
 }
-
-

@@ -5,10 +5,10 @@ import core.Rule;
 import java.util.List;
 
 /**
- * Represents a generic Rules Interface.
+ * Abstract class representing an interface for rules.
  */
 public abstract class RulesInterface {
-    private List<Rule> rules; // List of associated rules.
+    private List<Rule> rules;
 
     public RulesInterface(List<Rule> rules) {
         this.rules = rules;
@@ -16,9 +16,5 @@ public abstract class RulesInterface {
 
     public List<Rule> getRules() {
         return rules;
-    }
-
-    public void setRules(List<Rule> rules) {
-        this.rules = rules;
     }
 }

@@ -1,20 +1,20 @@
 package core;
 
 /**
- * Represents a generic Port in the system.
+ * Represents a port in the system, used for communication between components.
  */
-public abstract class Port {
-    private String portId; // Unique identifier for the port.
+public class Port {
+    private String name;
 
-    public Port(String portId) {
-        this.portId = portId;
+    public Port(String name) {
+        this.name = name;
     }
 
-    public String getPortId() {
-        return portId;
+    public String getName() {
+        return name;
     }
 
-    public void setPortId(String portId) {
-        this.portId = portId;
+    public void setName(String name) {
+        this.name = name;
     }
 }

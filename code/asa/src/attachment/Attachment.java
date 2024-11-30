@@ -1,33 +1,33 @@
 package attachment;
 
-import component.ProvidedPort;
-import component.RequiredPort;
+import core.Port;
+import core.Rule;
 
 /**
- * Represents an Attachment in the system.
+ * Represents an attachment between a port and a rule.
  */
-public class Attachment {
-    private RequiredPort requiredPort;
-    private ProvidedPort providedPort;
+public abstract class Attachment {
+    private Port port;
+    private Rule rule;
 
-    public Attachment(RequiredPort requiredPort, ProvidedPort providedPort) {
-        this.requiredPort = requiredPort;
-        this.providedPort = providedPort;
+    public Attachment(Port port, Rule rule) {
+        this.port = port;
+        this.rule = rule;
     }
 
-    public RequiredPort getRequiredPort() {
-        return requiredPort;
+    public Port getPort() {
+        return port;
     }
 
-    public void setRequiredPort(RequiredPort requiredPort) {
-        this.requiredPort = requiredPort;
+    public void setPort(Port port) {
+        this.port = port;
     }
 
-    public ProvidedPort getProvidedPort() {
-        return providedPort;
+    public Rule getRule() {
+        return rule;
     }
 
-    public void setProvidedPort(ProvidedPort providedPort) {
-        this.providedPort = providedPort;
+    public void setRule(Rule rule) {
+        this.rule = rule;
     }
 }

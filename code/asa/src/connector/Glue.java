@@ -1,20 +1,24 @@
 package connector;
 
+import core.Rule;
+import java.util.List;
+
 /**
- * Represents a Glue in the system.
+ * Represents a glue that connects rules and services.
+ * It holds a list of rules that connect services with components.
  */
 public class Glue {
-    private String glueId; // Unique identifier for the glue.
+    private List<Rule> rules;
 
-    public Glue(String glueId) {
-        this.glueId = glueId;
+    public Glue(List<Rule> rules) {
+        this.rules = rules;
     }
 
-    public String getGlueId() {
-        return glueId;
+    public List<Rule> getRules() {
+        return rules;
     }
 
-    public void setGlueId(String glueId) {
-        this.glueId = glueId;
+    public void setRules(List<Rule> rules) {
+        this.rules = rules;
     }
 }

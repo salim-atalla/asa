@@ -1,15 +1,25 @@
 package connector;
 
 import core.Rule;
-import rules.RulesInterface;
-
 import java.util.List;
 
 /**
- * Represents Require Rules, a specialization of Rules Interface.
+ * Represents the required rules of a connector.
+ * A connector may have a set of rules that need to be satisfied
+ * for the connection to be valid.
  */
-public class RequireRules extends RulesInterface {
+public class RequireRules {
+    private List<Rule> rules;
+
     public RequireRules(List<Rule> rules) {
-        super(rules);
+        this.rules = rules;
+    }
+
+    public List<Rule> getRules() {
+        return rules;
+    }
+
+    public void setRules(List<Rule> rules) {
+        this.rules = rules;
     }
 }

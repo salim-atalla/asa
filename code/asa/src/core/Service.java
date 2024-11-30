@@ -1,20 +1,32 @@
 package core;
 
+import connector.Glue;
+
 /**
- * Represents a generic Service in the system.
+ * Represents a service provided or required by a component.
+ * Each service is linked to a Glue object to establish rules.
  */
-public abstract class Service {
-    private String serviceId; // Unique identifier for the service.
+public class Service {
+    private String serviceName;
+    private Glue glue;
 
-    public Service(String serviceId) {
-        this.serviceId = serviceId;
+    public Service(String serviceName) {
+        this.serviceName = serviceName;
     }
 
-    public String getServiceId() {
-        return serviceId;
+    public String getServiceName() {
+        return serviceName;
     }
 
-    public void setServiceId(String serviceId) {
-        this.serviceId = serviceId;
+    public void setServiceName(String serviceName) {
+        this.serviceName = serviceName;
+    }
+
+    public Glue getGlue() {
+        return glue;
+    }
+
+    public void setGlue(Glue glue) {
+        this.glue = glue;
     }
 }

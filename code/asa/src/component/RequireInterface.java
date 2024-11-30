@@ -2,14 +2,33 @@ package component;
 
 import core.Port;
 import core.Service;
-
 import java.util.List;
 
 /**
- * Represents a Require Interface, a specialization of Component Interface.
+ * Represents the required interface of a component.
  */
-public class RequireInterface extends ComponentInterface {
+public class RequireInterface {
+    private List<Port> ports;
+    private List<Service> services;
+
     public RequireInterface(List<Port> ports, List<Service> services) {
-        super(ports, services);
+        this.ports = ports;
+        this.services = services;
+    }
+
+    public List<Port> getPorts() {
+        return ports;
+    }
+
+    public void setPorts(List<Port> ports) {
+        this.ports = ports;
+    }
+
+    public List<Service> getServices() {
+        return services;
+    }
+
+    public void setServices(List<Service> services) {
+        this.services = services;
     }
 }

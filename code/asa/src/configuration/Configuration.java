@@ -2,15 +2,15 @@ package configuration;
 
 import component.Component;
 import connector.Connector;
-
 import java.util.List;
 
 /**
- * Represents a Configuration in the system.
+ * Represents a configuration in the system.
+ * Contains components and connectors.
  */
 public class Configuration {
-    private List<Component> components; // List of components in the configuration.
-    private List<Connector> connectors; // List of connectors in the configuration.
+    private List<Component> components;
+    private List<Connector> connectors;
 
     public Configuration(List<Component> components, List<Connector> connectors) {
         this.components = components;

@@ -3,10 +3,10 @@ package component;
 import core.Port;
 
 /**
- * Represents a Provided Port, a specialization of Port.
+ * Represents a port provided by a component.
  */
 public class ProvidedPort extends Port {
-    public ProvidedPort(String portId) {
-        super(portId);
+    public ProvidedPort(String name) {
+        super(name);
     }
 }
