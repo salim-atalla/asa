@@ -1,18 +1,18 @@
 package attachment;
 
 import core.Port;
-import core.Rule;
+import rules.RulesInterface;
 
 /**
- * Represents an attachment between a port and a rule.
+ * Represents an attachment between a port and a rules interface.
  */
 public abstract class Attachment {
     private Port port;
-    private Rule rule;
+    private RulesInterface rules;
 
-    public Attachment(Port port, Rule rule) {
+    public Attachment(Port port, RulesInterface rules) {
         this.port = port;
-        this.rule = rule;
+        this.rules = rules;
     }
 
     public Port getPort() {
@@ -23,11 +23,11 @@ public abstract class Attachment {
         this.port = port;
     }
 
-    public Rule getRule() {
-        return rule;
+    public RulesInterface getRules() {
+        return rules;
     }
 
-    public void setRule(Rule rule) {
-        this.rule = rule;
+    public void setRules(RulesInterface rules) {
+        this.rules = rules;
     }
 }

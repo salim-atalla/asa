@@ -1,25 +1,19 @@
 package connector;
 
+import rules.RulesInterface;
 import core.Rule;
 import java.util.List;
 
 /**
- * Represents the provided rules of a connector.
- * A connector can provide a set of rules that will be applied to connect
- * components and services.
+ * Represents provided rules.
  */
-public class ProvideRules {
-    private List<Rule> rules;
-
+public class ProvideRules extends RulesInterface {
     public ProvideRules(List<Rule> rules) {
-        this.rules = rules;
+        super(rules);
     }
 
-    public List<Rule> getRules() {
-        return rules;
-    }
-
-    public void setRules(List<Rule> rules) {
-        this.rules = rules;
+    @Override
+    public void applyRules() {
+        // Implementation of rule application logic for provided rules
     }
 }

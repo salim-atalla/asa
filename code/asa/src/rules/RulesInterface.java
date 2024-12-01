@@ -1,7 +1,6 @@
 package rules;
 
 import core.Rule;
-
 import java.util.List;
 
 /**
@@ -17,4 +16,13 @@ public abstract class RulesInterface {
     public List<Rule> getRules() {
         return rules;
     }
+
+    public void setRules(List<Rule> rules) {
+        this.rules = rules;
+    }
+
+    /**
+     * Abstract method to be implemented by subclasses.
+     */
+    public abstract void applyRules();
 }
