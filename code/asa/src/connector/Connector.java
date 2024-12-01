@@ -1,6 +1,9 @@
 package connector;
 
 import component.Component;
+import core.Service;
+
+import java.util.List;
 
 /**
  * Represents a connector used to connect two components.
@@ -47,7 +50,28 @@ public class Connector {
      * and applies glue to bind services with rules.
      */
     public void connectComponents(Component component1, Component component2) {
-        // Logic for connecting two components
-        // This could involve setting up ports and services, etc.
+        // Collect all provided services from the first component
+        List<Service> providedServices = component1.getProvidedInterface().getPorts()
+                .stream()
+                .flatMap(port -> port.getServices().stream())
+                .toList();
+
+        // Collect all required services from the second component
+        List<Service> requiredServices = component2.getRequiredInterface().getPorts()
+                .stream()
+                .flatMap(port -> port.getServices().stream())
+                .toList();
+
+        // Match and bind services
+        for (Service providedService : providedServices) {
+            for (Service requiredService : requiredServices) {
+                if (providedService.applyRules(requiredService)) {
+                    System.out.println("Connected service: "
+                            + providedService.getServiceName()
+                            + " to "
+                            + requiredService.getServiceName());
+                }
+            }
+        }
     }
 }

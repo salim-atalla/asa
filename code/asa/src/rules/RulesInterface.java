@@ -20,9 +20,4 @@ public abstract class RulesInterface {
     public void setRules(List<Rule> rules) {
         this.rules = rules;
     }
-
-    /**
-     * Abstract method to be implemented by subclasses.
-     */
-    public abstract void applyRules();
 }
