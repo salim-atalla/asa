@@ -29,6 +29,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Port" instanceTypeName="Port" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="Service" instanceTypeName="Service"
       abstract="true">
+    <eOperations name="applyRules"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="glue" lowerBound="1" eType="#//Glue"
         containment="true"/>
   </eClassifiers>
@@ -53,6 +54,7 @@
         eType="#//Component" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Conector" instanceTypeName="Conector">
+    <eOperations name="connectComponents"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="providedRules" lowerBound="1"
         upperBound="-1" eType="#//ProvideRules" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="requiredRules" lowerBound="1"
@@ -73,7 +75,11 @@
       eSuperTypes="#//RulesInterface"/>
   <eClassifiers xsi:type="ecore:EClass" name="RequireRules" instanceTypeName="RequireRules"
       eSuperTypes="#//RulesInterface"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Rule" instanceTypeName="Rule"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Rule" instanceTypeName="Rule">
+    <eOperations name="apply"/>
+    <eOperations name="applyNameMatch"/>
+    <eOperations name="applyCompatibilityCheck"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ProvidedPort2RequiredRuleAttachment"
       instanceTypeName="ProvidedPort2RequiredRuleAttachment" eSuperTypes="#//Attachment">
     <eStructuralFeatures xsi:type="ecore:EReference" name="requiredRule" lowerBound="1"
@@ -91,6 +97,7 @@
         eType="#//ProvideRules" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Glue" instanceTypeName="Glue">
+    <eOperations name="bindServices"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="rules" lowerBound="1" upperBound="-1"
         eType="#//Rule" containment="true"/>
   </eClassifiers>
@@ -120,4 +127,8 @@
       eSuperTypes="#//Subject"/>
   <eClassifiers xsi:type="ecore:EClass" name="ConcreteObserver" instanceTypeName="ConcreteObserver"
       eSuperTypes="#//Observer"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="RuleType" instanceTypeName="RuleType">
+    <eLiterals name="NAME_MATCH"/>
+    <eLiterals name="COMPATIBILITY_CHECK" value="1"/>
+  </eClassifiers>
 </ecore:EPackage>
