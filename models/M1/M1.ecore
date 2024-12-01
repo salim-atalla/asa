@@ -110,7 +110,7 @@
     <eOperations name="notifyObservers"/>
     <eOperations name="setStatus"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="observers" lowerBound="1"
-        upperBound="-1" eType="#//Observer" containment="true"/>
+        upperBound="-1" eType="#//Observer"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Observer" instanceClassName="Observer"
       interface="true">
