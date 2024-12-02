@@ -105,10 +105,16 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="providedports" lowerBound="1"
         upperBound="-1" eType="#//ProvidedPort" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="clients" upperBound="-1"
+        eType="#//Client" eOpposite="#//Client/server"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="connectionmanager" lowerBound="1"
+        eType="#//ConnectionManager" eOpposite="#//ConnectionManager/server"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Client" instanceTypeName="Client" eSuperTypes="#//Component #//Observer">
     <eStructuralFeatures xsi:type="ecore:EReference" name="requiredports" lowerBound="1"
         upperBound="-1" eType="#//RequiredPort" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="server" eType="#//Server"
+        eOpposite="#//Server/clients"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Subject" instanceTypeName="Subject"
       interface="true">
@@ -130,5 +136,28 @@
   <eClassifiers xsi:type="ecore:EEnum" name="RuleType" instanceTypeName="RuleType">
     <eLiterals name="NAME_MATCH"/>
     <eLiterals name="COMPATIBILITY_CHECK" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConnectionManager" instanceTypeName="ConnectionManager"
+      eSuperTypes="#//Component">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="securitymanager" lowerBound="1"
+        eType="#//SecurityManager" eOpposite="#//SecurityManager/connectionmanager"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="server" lowerBound="1"
+        eType="#//Server" eOpposite="#//Server/connectionmanager"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="database" lowerBound="1"
+        upperBound="-1" eType="#//DataBase" eOpposite="#//DataBase/connectionmanager"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SecurityManager" instanceTypeName="SecurityManager"
+      eSuperTypes="#//Component">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="connectionmanager" lowerBound="1"
+        eType="#//ConnectionManager" eOpposite="#//ConnectionManager/securitymanager"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="database" lowerBound="1"
+        upperBound="-1" eType="#//DataBase" eOpposite="#//DataBase/securitymanager"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataBase" instanceTypeName="DataBase"
+      eSuperTypes="#//Component">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="connectionmanager" lowerBound="1"
+        eType="#//ConnectionManager" eOpposite="#//ConnectionManager/database"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="securitymanager" lowerBound="1"
+        eType="#//SecurityManager" eOpposite="#//SecurityManager/database"/>
   </eClassifiers>
 </ecore:EPackage>
