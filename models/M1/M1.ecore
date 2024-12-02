@@ -109,6 +109,10 @@
         eType="#//Client" eOpposite="#//Client/server"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="connectionmanager" lowerBound="1"
         eType="#//ConnectionManager" eOpposite="#//ConnectionManager/server"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="securitymanager" lowerBound="1"
+        eType="#//SecurityManager" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="database" lowerBound="1"
+        eType="#//DataBase" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Client" instanceTypeName="Client" eSuperTypes="#//Component #//Observer">
     <eStructuralFeatures xsi:type="ecore:EReference" name="requiredports" lowerBound="1"
