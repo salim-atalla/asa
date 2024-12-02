@@ -9,4 +9,9 @@ public interface Observer {
      * Updates the observer based on changes in the subject.
      */
     void update();
+
+    /**
+     * Updates the observer based on changes in the subject with a message.
+     */
+    void update(String message);
 }

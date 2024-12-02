@@ -25,4 +25,9 @@ public interface Subject {
      * Notifies all registered observers of a state change.
      */
     void notifyObservers();
+
+    /**
+     * Notifies all registered observers of a state change with a message.
+     */
+    void notifyObservers(String message);
 }
