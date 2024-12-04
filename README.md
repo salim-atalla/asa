@@ -298,7 +298,7 @@ GitLab: [https://gitlab.univ-nantes.fr/E235352S/](https://gitlab.univ-nantes.fr/
 Student Master's degree in Computer Science / Software and distributed systems architecture
 
 Email: [salim.atalla@etu.univ-nantes.fr](mailto:salim.atalla@etu.univ-nantes.fr)  
-GitLab: [https://github.com/salim-atalla](https://gitlab.univ-nantes.fr/E191350P)
+GitHub: [https://github.com/salim-atalla](https://gitlab.univ-nantes.fr/E191350P)
 
 ---
 
