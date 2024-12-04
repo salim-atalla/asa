@@ -9,6 +9,8 @@
         eType="#//ProvideInterface" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="childComponents" upperBound="-1"
         eType="#//Component" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="configuration" lowerBound="1"
+        eType="#//Configuration" eOpposite="#//Configuration/components"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ProvideInterface" instanceTypeName="ProvideInterface"
       eSuperTypes="#//ComponentInterface">
@@ -48,10 +50,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="ProvidedService" instanceTypeName="ProvidedService"
       eSuperTypes="#//Service"/>
   <eClassifiers xsi:type="ecore:EClass" name="Configuration" instanceTypeName="Configuration">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="conectors" upperBound="-1"
-        eType="#//Conector" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="components" upperBound="-1"
-        eType="#//Component" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="components" lowerBound="1"
+        upperBound="-1" eType="#//Component" eOpposite="#//Component/configuration"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conectors" lowerBound="1"
+        upperBound="-1" eType="#//Conector" eOpposite="#//Conector/configuration"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Conector" instanceTypeName="Conector">
     <eOperations name="connectComponents"/>
@@ -65,6 +67,8 @@
         upperBound="-1" eType="#//RequiredPort" eOpposite="#//RequiredPort/conectors"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="providedports" lowerBound="1"
         upperBound="-1" eType="#//ProvidedPort" eOpposite="#//ProvidedPort/conectors"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="configuration" lowerBound="1"
+        eType="#//Configuration" eOpposite="#//Configuration/conectors"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RulesInterface" instanceTypeName="RulesInterface"
       abstract="true">
